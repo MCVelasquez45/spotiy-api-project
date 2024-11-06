@@ -1,0 +1,31 @@
+/* src/components/ArtistSearch/ArtistSearch.css */
+.artist-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .artist-search input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #1DB954;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .artist-search button {
+    padding: 10px 20px;
+    background-color: #1DB954;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .artist-search button:hover {
+    background-color: #17a34a;
+  }
+  

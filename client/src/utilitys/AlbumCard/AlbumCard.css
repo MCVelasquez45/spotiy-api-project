@@ -1,0 +1,43 @@
+/* AlbumCard.css */
+
+.album-card {
+  background-color: #191414; /* Spotify black background */
+  color: #FFFFFF; /* White text for readability */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Slight rounding for Spotify styling */
+  max-width: 250px; /* Set a larger width for the card */
+}
+
+.album-card:hover {
+  transform: scale(1.02); /* Subtle zoom effect */
+  transition: transform 0.2s ease;
+}
+
+.album-card .album-card-body {
+  text-align: center;
+  padding: 10px;
+}
+
+.album-card .album-card-title {
+  font-size: 1.1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%; /* Prevent title overflow */
+}
+
+.album-card img.album-artwork {
+  border-radius: 8px; /* Rounded corners for artwork */
+  height: 250px; /* Larger height for better visibility */
+  width: 100%; /* Full width to fill the card */
+  object-fit: cover; /* Maintain aspect ratio and cover */
+}
+/* AlbumRow.css */
+
+.album-row {
+  display: flex !important;
+  flex-wrap: wrap; /* Wrap to a new line on smaller screens */
+  gap: 16px; /* Spacing between cards */
+  justify-content: center; /* Center-align the cards in the row */
+  padding: 20px; /* Optional padding around the row */
+}

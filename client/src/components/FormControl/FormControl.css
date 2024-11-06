@@ -1,0 +1,19 @@
+/* src/components/FormControl/FormControl.css */
+
+.custom-form-control {
+    height: calc(2.5rem + 2px); /* Consistent height */
+    border: 2px solid #1DB954; /* Spotify green border */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 1em;
+  }
+  
+  .custom-form-control:focus {
+    outline: none; /* Remove default outline */
+    border-color: #1DB954; /* Green border on focus */
+  }
+  
+  /* Ensures button and input have the same height */
+  .btn {
+    height: calc(2.5rem + 2px); /* Match input height */
+  }
+  

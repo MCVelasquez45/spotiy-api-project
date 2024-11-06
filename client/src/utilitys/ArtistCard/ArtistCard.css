@@ -1,0 +1,24 @@
+.artist-card {
+    width: 200px;
+    background-color: #1DB954; /* Spotify's primary green color */
+    color: white;
+    border: none;
+    text-align: center;
+  }
+  
+  .artist-image {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+  }
+  
+  .artist-card-body {
+    padding: 10px;
+  }
+  
+  .artist-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  

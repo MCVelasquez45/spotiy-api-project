@@ -1,0 +1,21 @@
+.App {
+  background-color: #000000; /* Set the background to black */
+  color: #FFFFFF; /* Set the text color to white for contrast */
+  min-height: 100vh; /* Ensure the background covers the full height of the viewport */
+}
+
+nav {
+  display: flex;
+  justify-content: space-around; /* Space links evenly */
+  margin: 20px 0; /* Add some margin for spacing */
+}
+
+nav a {
+  color: #1DB954; /* Set link color to Spotify green */
+  text-decoration: none; /* Remove underline from links */
+  font-weight: bold; /* Make links bold */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Add underline on hover for better UX */
+}

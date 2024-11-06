@@ -1,0 +1,24 @@
+/* src/components/Logo/Logo.css */
+/* src/components/Logo/Logo.css */
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  background-color: #1DB954 !important; /* Spotify green */
+}
+
+.spotify-logo {
+  max-width: 150px; /* Adjust based on your layout */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .spotify-logo {
+    max-width: 120px; /* Scale down for smaller screens */
+  }
+}
+
+  
+
