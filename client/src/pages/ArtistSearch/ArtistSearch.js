@@ -6,6 +6,7 @@ import ArtistCard from '../../utilitys/ArtistCard/ArtistCard';
 const ArtistSearch = ({ accessToken, FormControlComponentProp }) => {
   const [artistName, setArtistName] = useState(''); // State to track the artist name input
   const [results, setResults] = useState([]); // State to hold the search results
+  const [hasSearched, setHasSearched] = useState(false); // State to track if a search has been performed
 
   // Function to fetch artists from the Spotify API
   const handleSearch = async () => {
@@ -33,6 +34,8 @@ const ArtistSearch = ({ accessToken, FormControlComponentProp }) => {
     } catch (error) {
       console.error('Error fetching artist data:', error);
       setResults([]);
+    } finally {
+      setHasSearched(true); // Mark that a search has been completed
     }
   };
 
@@ -85,15 +88,14 @@ const ArtistSearch = ({ accessToken, FormControlComponentProp }) => {
               />
             </Col>
           ))
-        ) : (
+        ) : hasSearched ? ( // Only display the message if a search was performed
           <Col xs={12}>
             <p>No artists found. Please try a different search.</p>
           </Col>
-        )}
+        ) : null}
       </Row>
     </Container>
   );
 };
 
 export default ArtistSearch;
-

@@ -10,6 +10,9 @@ const AlbumSearch = ({ accessToken }) => {
   // State to store fetched album results
   const [albums, setAlbums] = useState([]);
 
+  // State to track if a search has been initiated
+  const [hasSearched, setHasSearched] = useState(false);
+
   // Fetch albums from Spotify API based on the search query
   const handleSearch = async () => {
     if (!albumName) return; // Prevent search if query is empty
@@ -36,6 +39,8 @@ const AlbumSearch = ({ accessToken }) => {
     } catch (error) {
       console.error('Error fetching album data:', error);
       setAlbums([]);
+    } finally {
+      setHasSearched(true); // Mark that a search has been completed
     }
   };
 
@@ -75,17 +80,16 @@ const AlbumSearch = ({ accessToken }) => {
               <AlbumCard album={album} />
             </Col>
           ))
-        ) : (
+        ) : hasSearched ? ( // Only display the message if a search was performed
           <Col xs={12}>
             <p>No albums found. Please try a different search.</p>
           </Col>
-        )}
+        ) : null}
       </Row>
     </Container>
   );
 };
 
 export default AlbumSearch;
-
 
 

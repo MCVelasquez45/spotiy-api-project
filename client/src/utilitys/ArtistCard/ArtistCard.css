@@ -1,24 +1,92 @@
+/* src/components/ArtistCard/ArtistCard.css */
 .artist-card {
-    width: 200px;
-    background-color: #1DB954; /* Spotify's primary green color */
-    color: white;
-    border: none;
-    text-align: center;
+  width: 100%; /* Full width by default */
+  max-width: 250px; /* Maximum width to keep a consistent size on larger screens */
+  background-color: #1DB954; /* Spotify's primary green color */
+  color: white;
+  border: none;
+  text-align: center;
+  margin: auto; /* Center the card horizontally in its container */
+  border-radius: 10px; /* Add rounded corners for a modern look */
+  overflow: hidden; /* Ensure content stays within the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.artist-card:hover {
+  transform: scale(1.05); /* Slight zoom-in effect */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Emphasize shadow on hover */
+}
+
+.artist-image {
+  border-radius: 50%; /* Circular profile images */
+  object-fit: cover;
+  height: 100px; /* Smaller default size for responsiveness */
+  width: 100px;
+  margin: 15px auto 10px; /* Center image and add spacing */
+}
+
+.artist-card-body {
+  padding: 15px;
+}
+
+.artist-card-title {
+  font-size: 1rem; /* Smaller font for better scalability */
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-overflow: ellipsis; /* Truncate long names with ellipsis */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.artist-card-followers,
+.artist-card-genres {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Responsive design adjustments */
+@media (min-width: 576px) {
+  .artist-card {
+      max-width: 200px; /* Slightly smaller cards for medium-sized screens */
   }
-  
+
   .artist-image {
-    border-radius: 50%;
-    object-fit: cover;
-    height: 200px;
-    width: 200px;
+      height: 120px;
+      width: 120px;
   }
-  
-  .artist-card-body {
-    padding: 10px;
-  }
-  
+
   .artist-card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
+      font-size: 1.1rem;
   }
-  
+}
+
+@media (min-width: 768px) {
+  .artist-card {
+      max-width: 220px; /* Medium-sized cards for larger screens */
+  }
+
+  .artist-image {
+      height: 150px;
+      width: 150px;
+  }
+
+  .artist-card-title {
+      font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .artist-card {
+      max-width: 250px; /* Larger cards for desktops */
+  }
+
+  .artist-image {
+      height: 200px;
+      width: 200px;
+  }
+
+  .artist-card-title {
+      font-size: 1.3rem;
+  }
+}

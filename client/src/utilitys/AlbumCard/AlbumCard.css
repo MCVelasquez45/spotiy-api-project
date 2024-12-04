@@ -1,25 +1,29 @@
-/* AlbumCard.css */
+/* src/components/AlbumCard/AlbumCard.css */
 
 .album-card {
   background-color: #191414; /* Spotify black background */
   color: #FFFFFF; /* White text for readability */
   border: none; /* Remove default border */
   border-radius: 8px; /* Slight rounding for Spotify styling */
-  max-width: 250px; /* Set a larger width for the card */
+  width: 100%; /* Allow flexible width by default */
+  max-width: 300px; /* Set a maximum width for larger screens */
+  overflow: hidden; /* Ensure content stays within the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
 .album-card:hover {
-  transform: scale(1.02); /* Subtle zoom effect */
-  transition: transform 0.2s ease;
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .album-card .album-card-body {
   text-align: center;
-  padding: 10px;
+  padding: 15px; /* Increased padding for spacing */
 }
 
 .album-card .album-card-title {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Responsive font size */
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -28,16 +32,29 @@
 
 .album-card img.album-artwork {
   border-radius: 8px; /* Rounded corners for artwork */
-  height: 250px; /* Larger height for better visibility */
+  height: auto; /* Allow the image height to adjust naturally */
   width: 100%; /* Full width to fill the card */
   object-fit: cover; /* Maintain aspect ratio and cover */
 }
-/* AlbumRow.css */
 
-.album-row {
-  display: flex !important;
-  flex-wrap: wrap; /* Wrap to a new line on smaller screens */
-  gap: 16px; /* Spacing between cards */
-  justify-content: center; /* Center-align the cards in the row */
-  padding: 20px; /* Optional padding around the row */
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .album-card {
+    max-width: 250px; /* Adjust card size for medium screens */
+  }
+
+  .album-card .album-card-title {
+    font-size: 0.9rem; /* Slightly smaller text on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .album-card {
+    max-width: 100%; /* Full width for small screens */
+    margin: 0 auto; /* Center the card horizontally */
+  }
+
+  .album-card img.album-artwork {
+    height: 200px; /* Adjust artwork size for smaller screens */
+  }
 }
